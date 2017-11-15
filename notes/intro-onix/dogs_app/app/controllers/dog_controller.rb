@@ -1,4 +1,7 @@
+
+
 # CRUD
+
 
 get '/' do
   erb :home
@@ -12,7 +15,8 @@ get '/dogs' do
 end
 
 # NEW
-get '/dogs/new' do
+get '/owners/:id/dogs/new' do
+  @owner = Owner.find(params[:id])
   erb :"dogs/new"
 end
 
@@ -23,16 +27,15 @@ get '/dogs/:id' do
 end
 
 # CREATE
-post '/dogs' do
-
-  @dog = Dog.new(name: params[:name], age: params[:age])
+post '/owners/:id/dogs' do
+  @owner = Owner.find(params[:id])
+  @dog = @owner.dogs.new(params[:dog])
   if @dog.save
-    redirect "/dogs/#{dog.id}"
+    redirect "/owners/#{@owner.id}"
   else
     @errors = @dog.errors.full_messages
     erb :"dogs/new"
   end
-
 end
 
 # EDIT
