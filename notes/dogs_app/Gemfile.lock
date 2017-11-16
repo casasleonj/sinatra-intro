@@ -17,6 +17,7 @@ GEM
     arel (7.1.4)
     backports (3.6.8)
     bcrypt (3.1.11)
+    bcrypt (3.1.11-x86-mingw32)
     capybara (2.13.0)
       addressable
       mime-types (>= 1.16)
@@ -40,7 +41,10 @@ GEM
     multi_json (1.12.1)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
+    nokogiri (1.7.1-x86-mingw32)
+      mini_portile2 (~> 2.1.0)
     pg (0.20.0)
+    pg (0.20.0-x86-mingw32)
     public_suffix (2.0.5)
     rack (1.6.5)
     rack-protection (1.5.3)
@@ -85,6 +89,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   activerecord
@@ -104,4 +109,4 @@ DEPENDENCIES
   sinatra-contrib
 
 BUNDLED WITH
-   1.14.6
+   1.16.0
